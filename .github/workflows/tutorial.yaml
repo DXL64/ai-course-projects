@@ -23,4 +23,5 @@ jobs:
     - name: 'test tutorial'
       run: |
         cd tutorial
-        python autograder.py
+        python autograder.py | sed '/FAIL/w /tmp/output'
+        cat /tmp/output > /dev/stderr
