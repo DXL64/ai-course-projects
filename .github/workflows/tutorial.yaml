@@ -1,0 +1,26 @@
+name: Ubuntu
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      OS: ubuntu-latest
+      PYTHON: '3.6'
+      CODECOV_TOKEN: 9a10fb40-3535-460e-8c7c-b2d9ecbc4149
+    steps:
+    - uses: actions/checkout@master
+    
+    - name: Setup Python
+      uses: actions/setup-python@master
+      with:
+        python-version: 3.6
+
+    - name: 'test tutorial'
+      run: |
+        cd tutorial
+        python autograder.py
