@@ -1,7 +1,7 @@
 name: Automatic Approve
 on:
   schedule:
-    - cron: "8 * * * *"
+    - cron: "9 * * * *"
 jobs:
   automatic-approve:
     name: Automatic Approve
