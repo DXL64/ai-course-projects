@@ -7,9 +7,9 @@ on:
 
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     env:
-      OS: ubuntu-latest
+      OS: ubuntu-20.04
       PYTHON: '3.6'
       CODECOV_TOKEN: 9a10fb40-3535-460e-8c7c-b2d9ecbc4149
     steps:
