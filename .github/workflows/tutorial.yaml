@@ -31,6 +31,7 @@ jobs:
       uses: mshick/add-pr-comment@v2
       with:
         message-path: /tmp/score
+        repo-token: ${{ secrets.PAT }}
 
     - name: 'check error'
       run: bash check_error.sh
