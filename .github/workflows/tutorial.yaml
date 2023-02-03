@@ -26,9 +26,11 @@ jobs:
         cd tutorial
         python autograder.py | sed '/FAIL/w /tmp/output'
         echo score = $(echo 9-$(bash ../check_grade.sh) | bc) > /tmp/score # score
-        bash ../check_error.sh
 
     - name: 'write score to comment'
       uses: mshick/add-pr-comment@v2
       with:
         message-path: /tmp/score
+
+    - name: 'check error'
+      run: bash check_error.sh
